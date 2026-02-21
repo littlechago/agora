@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Search, Hammer, ShieldQuestion, Menu, X } from "lucide-react";
+import { Search, Hammer, ShieldQuestion, Mic, Menu, X } from "lucide-react";
 
 const tools = [
   { href: "/check", label: "Check a Claim", icon: Search },
   { href: "/build", label: "Build an Argument", icon: Hammer },
   { href: "/stress", label: "Stress Test", icon: ShieldQuestion },
+  { href: "/live", label: "Live Analysis", icon: Mic },
 ];
 
 export function Navbar() {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Search, Hammer, ShieldQuestion, ArrowRight } from "lucide-react";
+import { Search, Hammer, ShieldQuestion, Mic, ArrowRight } from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -42,6 +42,14 @@ const tools = [
       "Submit an argument and see it steelmanned, challenged, and examined for vulnerabilities.",
     color: "violet",
   },
+  {
+    href: "/live",
+    icon: Mic,
+    title: "Live Analysis",
+    description:
+      "Record a real conversation and run any analysis tool on what was said. Powered by your microphone.",
+    color: "rose",
+  },
 ];
 
 const colorMap: Record<string, { bg: string; icon: string; hover: string }> = {
@@ -59,6 +67,11 @@ const colorMap: Record<string, { bg: string; icon: string; hover: string }> = {
     bg: "bg-violet-50",
     icon: "text-violet-600",
     hover: "group-hover:bg-violet-100",
+  },
+  rose: {
+    bg: "bg-rose-50",
+    icon: "text-rose-600",
+    hover: "group-hover:bg-rose-100",
   },
 };
 
@@ -80,7 +93,7 @@ export default function Home() {
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {tools.map((tool) => {
           const colors = colorMap[tool.color];
           return (
